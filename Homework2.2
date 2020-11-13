@@ -1,0 +1,21 @@
+select = int(input("Select a number between 1 and 100:   "))
+x = 0
+
+while x < select:
+    if x % 5 ==0 and x % 3 ==0:
+        print("fizzbuzz")
+        x = x + 1
+
+    elif x % 5 == 0 :
+        print("buzz")
+        x = x + 1
+
+    elif  x % 3 == 0 :
+        print("fizz")
+        x = x + 1
+
+    else :
+        print(x + 1)
+        x = x + 1
+    if x == select:
+        break
