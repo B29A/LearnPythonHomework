@@ -1,0 +1,36 @@
+from Les6.Basketballplayer import Basketballplayer
+from Les6.footballplayer import Footballplayer
+
+lebron = Basketballplayer("james", "Lebron", 203, 133, 27.2, 7.4, 7.2)
+kev_dur = Basketballplayer(first_name="kevin", last_name="Durant", height_cm=210, weight_kg=108, points=27.2, rebounds=7.1, assists=4)
+
+ronaldo = Footballplayer("cristiano", "Ronaldo", 184, 79, 586, 95, 11)
+messi = Footballplayer("lionel","messi",170,67,575,67,0)
+
+print("enter data for a new Football player")
+new_first_name = input("enter first name ")
+new_last_name = input("enter last name: ")
+new_height = input("enter height in cm ")
+new_weight = input("enter weight in kg ")
+new_goals = input("total nr of goals scored: ")
+new_yellow_cards = input("total nr of yellow cards: ")
+new_red_cards = input("total nr of red cards: ")
+
+new_football_player =Footballplayer(first_name=new_first_name, last_name=new_last_name, height_cm=new_height, weight_kg=new_weight, goals=new_goals, yellow_cards=new_yellow_cards, red_cards=new_red_cards)
+
+with open("footballplayer.txt", "w") as football_file:
+    football_file.write(str(new_football_player.__dict__))
+
+print("see result now")
+print(new_football_player.__dict__)
+
+print(lebron.first_name)
+print(messi.last_name + " - " + str(messi.height_cm))
+
+#list of player
+players = [lebron, kev_dur, ronaldo, messi]
+for p in players:
+    print("name: {0}, height {1}".format(p.first_name, p.height_cm))
+
+print(lebron.weight_kg)
+print(str(lebron.weight_to_lbs()) + " pounds")
